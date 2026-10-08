@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ポケモン素材検索</title>
+  <title>ポケモン検索</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <main class="container">
     <header class="header">
-      <h1>ポケモン素材検索</h1>
-      <p>ポケモンの名前から公式素材を検索できます</p>
+      <h1>ポケモン検索</h1>
     </header>
 
     <section class="search-section">
-      <label for="searchInput" class="search-label">
-        ポケモンを検索
-      </label>
+
+      <div class="search-header">
+        <label for="searchInput" class="search-label">
+          ポケモンの名前で検索
+        </label>
+
+        <div class="result-info">
+          <span id="resultCount">全件</span>
+        </div>
+      </div>
 
       <div class="search-box">
         <input
@@ -26,14 +34,16 @@
           placeholder="例：フシギ、ピカチュウ、リザード..."
           autocomplete="off"
         >
-        <button id="clearButton" type="button" aria-label="検索をクリア">
+
+        <button
+          id="clearButton"
+          type="button"
+          aria-label="検索をクリア"
+        >
           ×
         </button>
       </div>
 
-      <div class="result-info">
-        <span id="resultCount">全件</span>
-      </div>
     </section>
 
     <section>
@@ -43,8 +53,10 @@
         <p>該当するポケモンが見つかりませんでした。</p>
       </div>
     </section>
+
   </main>
 
   <script src="script.js"></script>
 </body>
+
 </html>
