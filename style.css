@@ -51,21 +51,19 @@ body {
 
 .search-header {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
   margin-bottom: 8px;
 }
 
 .search-label {
   display: block;
-  margin: 0;
+  margin-bottom: 0;
   font-weight: 600;
 }
 
 .result-info {
-  margin: 0;
+  margin-top: 0;
   color: #666;
   font-size: 14px;
 }
