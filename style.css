@@ -91,6 +91,13 @@ body {
   box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.12);
 }
 
+/* ブラウザ標準の検索クリアボタンを非表示 */
+.search-box input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* 独自クリアボタン */
 .search-box button {
   position: absolute;
   right: 8px;
