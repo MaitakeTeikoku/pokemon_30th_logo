@@ -4,10 +4,13 @@ const results = document.getElementById("results");
 const resultCount = document.getElementById("resultCount");
 const noResults = document.getElementById("noResults");
 
+const BASE_URL =
+  "https://www.pokemon.co.jp/ex/30th_logo/assets/img/download/";
+
 let pokemonList = [];
 
 /*
- * ひらがな・カタカナを同じものとして扱うための正規化
+ * ひらがな・カタカナを同じものとして扱う
  */
 function normalizeText(text) {
   return text
@@ -47,7 +50,7 @@ async function loadPokemon() {
 }
 
 /*
- * 検索
+ * 部分一致検索
  */
 function searchPokemon(keyword) {
   const normalizedKeyword = normalizeText(keyword);
@@ -84,24 +87,37 @@ function renderResults(list) {
     const card = document.createElement("article");
     card.className = "card";
 
+    /*
+     * 画像URL
+     */
+    const imageUrl = BASE_URL + pokemon.filename;
+
+    /*
+     * 画像
+     */
+    const image = document.createElement("img");
+    image.className = "pokemon-image";
+    image.src = imageUrl;
+    image.alt = pokemon.name;
+    image.loading = "lazy";
+
+    /*
+     * 番号
+     */
     const number = document.createElement("div");
     number.className = "card-number";
     number.textContent = pokemon.filename.replace(".png", "");
 
+    /*
+     * 名前
+     */
     const name = document.createElement("h2");
     name.className = "card-name";
     name.textContent = pokemon.name;
 
-    const link = document.createElement("a");
-    link.className = "card-button";
-    link.href = pokemon.url;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.textContent = "公式画像を見る";
-
+    card.appendChild(image);
     card.appendChild(number);
     card.appendChild(name);
-    card.appendChild(link);
 
     fragment.appendChild(card);
   });

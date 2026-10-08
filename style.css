@@ -117,7 +117,7 @@ body {
 }
 
 .card {
-  padding: 20px;
+  overflow: hidden;
   border: 1px solid #e1e3e6;
   border-radius: 12px;
   background: #fff;
@@ -131,36 +131,32 @@ body {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* =========================
+   Pokemon Image
+========================= */
+
+.pokemon-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background: #fff;
+}
+
+/* =========================
+   Card Information
+========================= */
+
 .card-number {
-  margin-bottom: 6px;
+  padding: 14px 16px 0;
   color: #888;
   font-size: 13px;
 }
 
 .card-name {
-  margin: 0 0 16px;
+  margin: 4px 16px 16px;
   font-size: 20px;
   font-weight: 700;
-}
-
-.card-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 42px;
-  padding: 8px 12px;
-  border-radius: 8px;
-  background: #222;
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  transition: background 0.15s;
-}
-
-.card-button:hover {
-  background: #444;
 }
 
 /* =========================
@@ -192,10 +188,17 @@ body {
   }
 
   .results {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 
-  .card {
-    padding: 16px;
+  .card-name {
+    margin: 4px 12px 12px;
+    font-size: 16px;
+  }
+
+  .card-number {
+    padding: 10px 12px 0;
+    font-size: 12px;
   }
 }
