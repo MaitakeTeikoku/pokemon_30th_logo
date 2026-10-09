@@ -215,3 +215,22 @@ body {
     font-size: 12px;
   }
 }
+
+.footer {
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid #e1e3e6;
+  color: #777;
+  font-size: 12px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.footer p {
+  margin: 4px 0;
+}
+
+.footer a {
+  color: #3578c8;
+  text-decoration: underline;
+}
